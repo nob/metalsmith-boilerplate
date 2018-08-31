@@ -2,13 +2,14 @@ const glob = require('glob')
 const handlebars = require('handlebars')
 const Metalsmith = require('metalsmith')
 const layouts = require('metalsmith-layouts')
+const discoverPartials = require('metalsmith-discover-partials')
 const assets = require('metalsmith-static')
 const sass = require('metalsmith-sass')
+const markdown = require('metalsmith-markdown');
 const dataMarkdown = require('metalsmith-data-markdown')
 const browserSync = require('metalsmith-browser-sync')
 const autoprefixer = require('metalsmith-autoprefixer')
 const i18n = require('metalsmith-i18n')
-const inPlace = require('metalsmith-in-place')
 const multiLanguage = require('metalsmith-multi-language')
 const rootPath = require('metalsmith-rootpath')
 const htmlMinifier = require('metalsmith-html-minifier')
@@ -22,10 +23,9 @@ class BuildMetalsmith {
     let watch = false;
     let prod = false;
     process.argv.forEach(function (val) {
-      if (val === '--serve') {
+      if (val === '--watch') {
         watch = true;
-      }
-      if (val === '--prod') {
+      } else {
         prod = true;
       }
     });
@@ -43,11 +43,11 @@ class BuildMetalsmith {
     return new Promise((resolve, reject) => {
       var metalsmith = Metalsmith(__dirname)
         .source('src')
-        .destination('build');
+        .destination('dist');
         if (watch) {
           metalsmith.use(browserSync({
-            server : "build",
-            files  : ["src/**/*", "layouts/**/*.html", "partials/**/*.html", 'locales/**/*', 'assets/**/*']
+            server : "dist",
+            files  : ["src/**/*", "layouts/**/*.hbs", "partials/**/*.hbs", 'locales/**/*', 'assets/**/*']
           }))
         }
         metalsmith.clean(true)
@@ -58,33 +58,33 @@ class BuildMetalsmith {
           })
         }))
         .use(autoprefixer())
+        .use(markdown())
         .use(dataMarkdown({
           removeAttributeAfterwards: true
         }))
         .use(i18n({
           default: 'en',
-          locales: ['en', 'de'],
+          locales: ['en', 'ja'],
           directory: 'locales'
         }))
         .use(multiLanguage({
           default: 'en',
-          locales: ['en', 'de']
+          locales: ['en', 'ja']
         }))
         .use(permalinks({
           relative: false,
           pattern: ':locale/:slug/'
         }))
         .use(rootPath())
+        .use(discoverPartials({
+          directory: 'partials',
+          pattern: /\.hbs$/
+        }))
         .use(layouts({
-          engine: 'handlebars',
-          partials: 'partials'
+          pattern: "**/*.html"
         }))
         .use(inlineSource({
           rootpath: './src/'
-        }))
-        .use(inPlace({
-          directory: 'src',
-          pattern: '*.html'
         }))
         .use(htmlMinifier())
         .build((err) => {

@@ -1,7 +1,7 @@
 <header class="nav-header">
   <nav>
-    {{#ifEquals locale 'de'}}
-    <a href="{{rootPath}}de/">
+    {{#ifEquals locale 'ja'}}
+    <a href="{{rootPath}}ja/">
     {{else}}
     <a href="{{rootPath}}">
     {{/ifEquals}}
@@ -12,10 +12,10 @@
   </nav>
   <nav>
     <span>{{__ 'switch_language_to'}}: </span>
-    {{#ifEquals locale 'de'}}
+    {{#ifEquals locale 'ja'}}
     <a href="{{rootPath}}">{{__ 'english'}}</a>
     {{else}}
-    <a href="{{rootPath}}/de">{{__ 'german'}}</a>
+    <a href="{{rootPath}}/ja">{{__ 'japanese'}}</a>
     {{/ifEquals}}
   </nav>
 </header>
