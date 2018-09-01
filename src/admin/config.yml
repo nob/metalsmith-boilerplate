@@ -1,0 +1,79 @@
+################################################
+# Netlify CMS configurations & customizations.
+################################################
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+publish_mode: editorial_workflow
+
+media_folder: "src/imgages" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images" # The src attribute for uploaded media will begin with /images/uploads
+
+collections: # A list of collections the CMS should be able to edit
+  - label: "Pages"
+    name: "pages"
+    delete: false
+    format: "yaml-frontmatter"
+    files:
+      - label: "Home (English)"
+        name: "index_en"
+        file: "src/index_en.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Another body", name: "body2", widget: "markdown"}
+          - {label: "Body", name: "body", widget: "markdown"}
+          
+      - label: "Home (Japanese)"
+        name: "index_ja"
+        file: "src/index_ja.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Another body", name: "body2", widget: "markdown"}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+      - label: "Another page(English)"
+        name: "other-page_en"
+        file: "src/other-page_en.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+          
+      - label: "Another page(Japanese)"
+        name: "other-page_ja"
+        file: "src/other-page_ja.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+  - label: "Translations"
+    name: "translations"
+    delete: false
+    format: "json"
+    files:
+      - label: "English"
+        name: "locale_en"
+        file: "translations/en.json"
+        fields:
+          - {label: "home", name: "home", widget: "string"}
+          - {label: "other_page", name: "other_page", widget: "string"}
+          - {label: "footer_text", name: "footer_text", widget: "string"}
+          - {label: "language", name: "language", widget: "string"}
+          - {label: "switch_language_to", name: "switch_language_to", widget: "string"}
+          - {label: "japanese", name: "japanese", widget: "string"}
+          - {label: "english", name: "english", widget: "string"}
+          - {label: "made_with", name: "made_with", widget: "string"}
+
+      - label: "Japanese"
+        name: "locale_jp"
+        file: "translations/ja.json"
+        fields:
+          - {label: "home", name: "home", widget: "string"}
+          - {label: "other_page", name: "other_page", widget: "string"}
+          - {label: "footer_text", name: "footer_text", widget: "string"}
+          - {label: "language", name: "language", widget: "string"}
+          - {label: "switch_language_to", name: "switch_language_to", widget: "string"}
+          - {label: "japanese", name: "japanese", widget: "string"}
+          - {label: "english", name: "english", widget: "string"}
+          - {label: "made_with", name: "made_with", widget: "string"}
+

@@ -1,7 +1,7 @@
 ---
 title: 別のページ
-slug: other-page
 layout: page.hbs
 locale: ja
+slug: other-page
 ---
 これはMetalsmithでビルドされたカッコいいウェブサイトです。。。コンテンツ、コンテンツ、コンテンツ...
