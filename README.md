@@ -3,28 +3,33 @@
 This is a boilerplate for building static websites with [metalsmith.io/](http://www.metalsmith.io).
 
 ## Setup:
-Just clone the repo and `npm install`.
+Just clone the repo and `yarn`.
 
 ## Run:
 
-### Build: for a single build just use this command
+### Build: a single build for production use. 
 ```
-$ npm start
-```
-
-### Serve: a live-reload webserver will start (use this for dev)
-```
-$ npm run serve
+$ yarn build
 ```
 
-### Build & Deploy: builds the website and deploys it to your server (needs configuration)
+### Dev: a live-reload webserver will start.
 ```
-./jenkins.sh -ur
+$ yarn serve
 ```
+
+### Debug: Output debug information while building. See: [Metadata & debugging](http://http://www.metalsmith.io/#metadata-debugging).
+```
+$ yarn debug 
+```
+
 
 ## Features
 Important Hint: The order of the metalsmith-plugins in the `index.js` is on purpose and important.
 Some plugins have to run before others, because they change the folder structure or move files
+
+### Markdown
+- [markdown](https://github.com/segmentio/metalsmith-markdown)
+- [data markdown](https://github.com/majodev/metalsmith-data-markdown)
 
 ### Styling
 - [sass](https://www.npmjs.com/package/metalsmith-sass) Just the famous css preprocessor
