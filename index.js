@@ -51,9 +51,10 @@ class BuildMetalsmith {
         }
         metalsmith.clean(true)
         .use(sass({
+          outputDir: 'css/',
           outputStyle: 'compressed',
           functions: assetFunctions({
-            images_path: 'src/assets',
+            images_path: 'src/images',
           })
         }))
         .use(autoprefixer())
