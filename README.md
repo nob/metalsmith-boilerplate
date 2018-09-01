@@ -44,5 +44,4 @@ Some plugins have to run before others, because they change the folder structure
 ### Other
 - [browser-sync (livereload)](https://www.npmjs.com/package/metalsmith-browser-sync) Hassle-free live reload for development
 - [html minify](https://www.npmjs.com/package/metalsmith-html-minifier) Minifies the html output
-- [metalsmith-static](https://www.npmjs.com/package/metalsmith-static) copy assets (images, fonts, etc.)
 - [inline-source](https://www.npmjs.com/package/metalsmith-inline-source) Simple inlining of scripts, images, svgs, etc.

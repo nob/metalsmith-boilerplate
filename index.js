@@ -2,7 +2,6 @@ const Metalsmith = require('metalsmith')
 const layouts = require('metalsmith-layouts')
 const discoverPartials = require('metalsmith-discover-partials')
 const discoverHelpers = require('metalsmith-discover-helpers')
-const assets = require('metalsmith-static')
 const sass = require('metalsmith-sass')
 const markdown = require('metalsmith-markdown');
 const dataMarkdown = require('metalsmith-data-markdown')
@@ -46,7 +45,7 @@ class BuildMetalsmith {
         if (watch) {
           metalsmith.use(browserSync({
             server : "dist",
-            files  : ["src/**/*", "layouts/**/*", 'locales/**/*', 'assets/**/*']
+            files  : ["src/**/*", "layouts/**/*", 'locales/**/*']
           }))
         }
         metalsmith.clean(true)
