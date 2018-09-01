@@ -1,6 +1,7 @@
 {
   "name": "metalsmith-boilerplate",
   "version": "0.0.1",
+  "license": "Beerware",
   "description": "",
   "main": "index.js",
   "repository": {},
@@ -10,11 +11,9 @@
     "build": "node index.js"
   },
   "dependencies": {
-    "glob": "^7.1.1",
     "handlebars": "^4.0.6",
     "jstransformer-handlebars": "^1.1.0",
     "metalsmith": "^2.3.0",
-    "metalsmith-assets": "^0.1.0",
     "metalsmith-autoprefixer": "^1.1.1",
     "metalsmith-browser-sync": "^1.1.1",
     "metalsmith-clean": "0.0.0",
