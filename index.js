@@ -1,8 +1,7 @@
-const glob = require('glob')
-const handlebars = require('handlebars')
 const Metalsmith = require('metalsmith')
 const layouts = require('metalsmith-layouts')
 const discoverPartials = require('metalsmith-discover-partials')
+const discoverHelpers = require('metalsmith-discover-helpers')
 const assets = require('metalsmith-static')
 const sass = require('metalsmith-sass')
 const markdown = require('metalsmith-markdown');
@@ -20,7 +19,6 @@ const debug = require('metalsmith-debug')
 
 class BuildMetalsmith {
   constructor () {
-    this.prepareHandlebarsHelper();
     let watch = false;
     let prod = false;
     process.argv.forEach(function (val) {
@@ -48,7 +46,7 @@ class BuildMetalsmith {
         if (watch) {
           metalsmith.use(browserSync({
             server : "dist",
-            files  : ["src/**/*", "layouts/**/*.hbs", "partials/**/*.hbs", 'locales/**/*', 'assets/**/*']
+            files  : ["src/**/*", "layouts/**/*", 'locales/**/*', 'assets/**/*']
           }))
         }
         metalsmith.clean(true)
@@ -78,11 +76,15 @@ class BuildMetalsmith {
         }))
         .use(rootPath())
         .use(discoverPartials({
-          directory: 'partials',
+          directory: 'layouts/partials',
           pattern: /\.hbs$/
         }))
+        .use(discoverHelpers({
+          directory: 'layouts/helpers',
+          pattern: /\.js$/
+        }))
         .use(layouts({
-          pattern: "**/*.html"
+          pattern: "**/*.html" //Not '**/*.md' here, Markdown files are already converted to HTML files.
         }))
         .use(inlineSource({
           rootpath: './src/'
@@ -99,21 +101,6 @@ class BuildMetalsmith {
           }
         })
     });
-  }
-
-  prepareHandlebarsHelper () {
-    // add custom helpers to handlebars
-    // https://github.com/superwolff/metalsmith-layouts/issues/63
-    //
-    // using the global handlebars instance
-    glob.sync(`${__dirname}/helpers/*.js`).forEach((fileName) => {
-      const helper = fileName.split('/').pop().replace('.js', '')
-
-      handlebars.registerHelper(
-        helper,
-        require(fileName)
-      )
-    })
   }
 }
 
