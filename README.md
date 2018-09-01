@@ -1,23 +1,23 @@
 # metalsmith boilerplate
 
-This is a boilerplate for building static websites with [metalsmith.io/](http://www.metalsmith.io).
+A boilerplate for building static websites with [metalsmith.io/](http://www.metalsmith.io).
 
 ## Setup:
 Just clone the repo and `yarn`.
 
 ## Run:
 
-### Build: a single build for production use. 
+### build: A single build for production use. 
 ```
 $ yarn build
 ```
 
-### Dev: a live-reload webserver will start.
+### dev: A live-reload webserver will start.
 ```
-$ yarn serve
+$ yarn dev
 ```
 
-### Debug: Output debug information while building. See: [Metadata & debugging](http://http://www.metalsmith.io/#metadata-debugging).
+### debug: Output debug information while building. See: [Metadata & debugging](http://http://www.metalsmith.io/#metadata-debugging).
 ```
 $ yarn debug 
 ```
@@ -36,7 +36,7 @@ Some plugins have to run before others, because they change the folder structure
 - [autoprefixer](https://www.npmjs.com/package/metalsmith-autoprefixer) Never write vender prefixes or alternate synatx again
 
 ### Layout(template)/Links
-- [metalsmith-layouts](https://www.npmjs.com/package/metalsmith-layouts) The Plugin for metalsmith layouting (supports multiple template languages)
+- [layouts](https://www.npmjs.com/package/metalsmith-layouts) The Plugin for metalsmith layouting (supports multiple template languages)
 - [handlebars](https://www.npmjs.com/package/handlebars) One of the most popular Template languages for js
 - [rootPath](https://www.npmjs.com/package/metalsmith-rootpath) With this plugin relative urls are easy to use
 - [permalinks](https://www.npmjs.com/package/metalsmith-permalinks) Don't like the `*.html` in the url, get red of it, with this plugin
