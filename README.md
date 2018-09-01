@@ -22,7 +22,6 @@ $ yarn serve
 $ yarn debug 
 ```
 
-
 ## Features
 Important Hint: The order of the metalsmith-plugins in the `index.js` is on purpose and important.
 Some plugins have to run before others, because they change the folder structure or move files
@@ -36,14 +35,14 @@ Some plugins have to run before others, because they change the folder structure
 - [sass asset functions](https://www.npmjs.com/package/node-sass-asset-functions) Use the asset functions for e.g. inlining images in scss
 - [autoprefixer](https://www.npmjs.com/package/metalsmith-autoprefixer) Never write vender prefixes or alternate synatx again
 
-### Layout/Links
+### Layout(template)/Links
 - [metalsmith-layouts](https://www.npmjs.com/package/metalsmith-layouts) The Plugin for metalsmith layouting (supports multiple template languages)
 - [handlebars](https://www.npmjs.com/package/handlebars) One of the most popular Template languages for js
 - [rootPath](https://www.npmjs.com/package/metalsmith-rootpath) With this plugin relative urls are easy to use
 - [permalinks](https://www.npmjs.com/package/metalsmith-permalinks) Don't like the `*.html` in the url, get red of it, with this plugin
 
 ### i18n
-- [i18n](https://www.npmjs.com/package/metalsmith-i18n) Use jsons with simple key - value for translations
+- [i18n](https://www.npmjs.com/package/metalsmith-i18n) Use jsons with simple 'key - value' for translations in common parts (e.g. header, footer, navigation menu)
 - [multi language](https://www.npmjs.com/package/metalsmith-multi-language) This plugin will render multiple versions of your website
 
 ### Other
