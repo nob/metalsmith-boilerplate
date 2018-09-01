@@ -64,7 +64,7 @@ class BuildMetalsmith {
         .use(i18n({
           default: 'en',
           locales: ['en', 'ja'],
-          directory: 'locales'
+          directory: 'translations'
         }))
         .use(multiLanguage({
           default: 'en',
