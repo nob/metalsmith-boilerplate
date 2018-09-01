@@ -6,6 +6,7 @@
   "repository": {},
   "scripts": {
     "dev": "node index.js --watch",
+    "debug": "DEBUG=metalsmith:* node index.js",
     "build": "node index.js"
   },
   "dependencies": {
@@ -18,6 +19,7 @@
     "metalsmith-browser-sync": "^1.1.1",
     "metalsmith-clean": "0.0.0",
     "metalsmith-data-markdown": "0.0.3",
+    "metalsmith-debug": "^1.2.0",
     "metalsmith-discover-partials": "^0.1.2",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-html-minifier": "^2.2.0",

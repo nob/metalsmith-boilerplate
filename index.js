@@ -16,6 +16,7 @@ const htmlMinifier = require('metalsmith-html-minifier')
 const permalinks = require('metalsmith-permalinks')
 const assetFunctions = require('node-sass-asset-functions')
 const inlineSource = require('metalsmith-inline-source')
+const debug = require('metalsmith-debug')
 
 class BuildMetalsmith {
   constructor () {
@@ -87,6 +88,7 @@ class BuildMetalsmith {
           rootpath: './src/'
         }))
         .use(htmlMinifier())
+        .use(debug()) 
         .build((err) => {
           if (err) {
             reject(err);

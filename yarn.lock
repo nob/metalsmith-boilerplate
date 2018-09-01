@@ -1679,6 +1679,13 @@ metalsmith-data-markdown@0.0.3:
     lodash "^2.4.1"
     marked "^0.3.2"
 
+metalsmith-debug@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/metalsmith-debug/-/metalsmith-debug-1.2.0.tgz#481987987a2ece12b761dc0cc533cf92e5f16bb8"
+  dependencies:
+    debug "^2.2.0"
+    multimatch "^2.1.0"
+
 metalsmith-discover-partials@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/metalsmith-discover-partials/-/metalsmith-discover-partials-0.1.2.tgz#01c5d224efd579187e9cecc3462e4366dc4fbdfa"
