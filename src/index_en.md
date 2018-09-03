@@ -5,22 +5,18 @@ body2: |-
 
   _italic italic_
 
-  __
 
-  __
 
-  __
 
-  __
 
-  __
 
-  __
 
-  __
 
-  list 1
 
+
+
+
+  * list 1
   * list 2
   * list 3
 
