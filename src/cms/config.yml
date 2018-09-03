@@ -7,6 +7,8 @@ backend:
 
 publish_mode: editorial_workflow
 
+display_url: https://my-metalsmith-boilerplate.netlify.com
+
 media_folder: "src/imgages" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images" # The src attribute for uploaded media will begin with /images/uploads
 
@@ -21,6 +23,9 @@ collections: # A list of collections the CMS should be able to edit
         file: "src/index_en.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Layout", name: "layout", widget: "hidden"}
+          - {label: "Locale", name: "locale", widget: "hidden"}
+          - {label: "Permalink", name: "permalink", widget: "hidden"}
           - {label: "Another body", name: "body2", widget: "markdown"}
           - {label: "Body", name: "body", widget: "markdown"}
           
@@ -29,6 +34,9 @@ collections: # A list of collections the CMS should be able to edit
         file: "src/index_ja.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Layout", name: "layout", widget: "hidden"}
+          - {label: "Locale", name: "locale", widget: "hidden"}
+          - {label: "Permalink", name: "permalink", widget: "hidden"}
           - {label: "Another body", name: "body2", widget: "markdown"}
           - {label: "Body", name: "body", widget: "markdown"}
 
@@ -37,6 +45,9 @@ collections: # A list of collections the CMS should be able to edit
         file: "src/other-page_en.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Layout", name: "layout", widget: "hidden"}
+          - {label: "Locale", name: "locale", widget: "hidden"}
+          - {label: "Slug", name: "slug", widget: "hidden"}
           - {label: "Body", name: "body", widget: "markdown"}
           
       - label: "Another page(Japanese)"
@@ -44,6 +55,9 @@ collections: # A list of collections the CMS should be able to edit
         file: "src/other-page_ja.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Layout", name: "layout", widget: "hidden"}
+          - {label: "Locale", name: "locale", widget: "hidden"}
+          - {label: "Slug", name: "slug", widget: "hidden", default: "other-page"}
           - {label: "Body", name: "body", widget: "markdown"}
 
   - label: "Translations"
