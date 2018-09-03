@@ -58,9 +58,6 @@ class BuildMetalsmith {
         }))
         .use(autoprefixer())
         .use(markdown())
-        .use(dataMarkdown({
-          removeAttributeAfterwards: true
-        }))
         .use(i18n({
           default: 'en',
           locales: ['en', 'ja'],
@@ -85,6 +82,10 @@ class BuildMetalsmith {
         }))
         .use(layouts({
           pattern: "**/*.html" //Not '**/*.md' here, Markdown files are already converted to HTML files.
+        }))
+        .use(debug()) 
+        .use(dataMarkdown({
+          removeAttributeAfterwards: true
         }))
         .use(inlineSource({
           rootpath: './src/'

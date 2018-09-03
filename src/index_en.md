@@ -1,5 +1,8 @@
 ---
 title: Hello World
+layout: page.hbs
+locale: en 
+permalink: false
 body2: |-
   ### KKKKKKK
 
