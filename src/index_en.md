@@ -1,12 +1,20 @@
 ---
 title: Hello World
-layout: page.hbs
-locale: en 
-permalink: false
 body2: |-
   ### KKKKKKK
 
   _italic italic_
+
+
+
+
+
+
+
+
+
+
+
 
   * list 1
   * list 2

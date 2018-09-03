@@ -3,7 +3,10 @@
 A boilerplate for building static websites with [metalsmith.io/](http://www.metalsmith.io).
 
 ## Setup:
-Just clone the repo and `yarn`.
+Just clone this repo and
+```
+$ yarn install
+```
 
 ## Run:
 
