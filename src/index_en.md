@@ -1,22 +1,6 @@
 ---
 title: Hello World
-body2: |-
-  ### KKKKKKK
-
-  _italic italic_
-      
-      
-      
-        
-       
-      
-      
-      
-  * list 1
-  * list 2
-  * list 3
-
-  ![Netlify CMS](https://d.pr/i/JubXrL+)
+body2: ''
 ---
 This is an awesome website build with Metalsmith...and 
 
