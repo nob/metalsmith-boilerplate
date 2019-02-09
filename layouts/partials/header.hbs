@@ -8,14 +8,14 @@
       {{__ 'home'}}
     </a>
     &nbsp;
-    <a href="{{rootPath}}/{{locale}}/other-page">{{__ 'other_page'}}</a>
+    <a href="{{rootPath}}{{locale}}/other-page">{{__ 'other_page'}}</a>
   </nav>
   <nav>
     <span>{{__ 'switch_language_to'}}: </span>
     {{#ifEquals locale 'ja'}}
     <a href="{{rootPath}}">{{__ 'english'}}</a>
     {{else}}
-    <a href="{{rootPath}}/ja">{{__ 'japanese'}}</a>
+    <a href="{{rootPath}}ja">{{__ 'japanese'}}</a>
     {{/ifEquals}}
   </nav>
 </header>
