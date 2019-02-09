@@ -26,7 +26,7 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Layout", name: "layout", widget: "hidden"}
           - {label: "Locale", name: "locale", widget: "hidden"}
           - {label: "Permalink", name: "permalink", widget: "hidden"}
-          - {label: "Another body", name: "body2", widget: "markdown"}
+          - {label: "Another body", name: "body2", widget: "markdown", required: false}
           - {label: "Body", name: "body", widget: "markdown"}
           
       - label: "Home (Japanese)"

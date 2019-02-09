@@ -45,7 +45,7 @@ class BuildMetalsmith {
         if (watch) {
           metalsmith.use(browserSync({
             server : "dist",
-            files  : ["src/**/*", "layouts/**/*", 'locales/**/*']
+            files  : ["src/**/*", "layouts/**/*", 'translations/**/*']
           }))
         }
         metalsmith.clean(true)
