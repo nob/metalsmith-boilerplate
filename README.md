@@ -26,7 +26,7 @@ $ yarn debug
 ```
 
 ## Features
-Important Hint: The order of the metalsmith-plugins in the `index.js` is on purpose and important.
+Important Hint: The order of the metalsmith-plugins in the `build.js` is on purpose and important.
 Some plugins have to run before others, because they change the folder structure or move files
 
 ### Markdown
