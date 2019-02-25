@@ -3,7 +3,7 @@ title: Hello World
 layout: page.hbs
 locale: ja
 permalink: false
-body2: ''
+body2: p
 ---
 This is an awesome website build with Metalsmith...and 
 
