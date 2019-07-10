@@ -20,7 +20,8 @@ $ yarn build
 $ yarn dev
 ```
 
-### debug: Output debug information while building. See: [Metadata & debugging](http://http://www.metalsmith.io/#metadata-debugging).
+### debug: Output debug information while building. 
+See: [Metadata & debugging](http://http://www.metalsmith.io/#metadata-debugging).
 ```
 $ yarn debug 
 ```
